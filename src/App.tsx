@@ -4,6 +4,7 @@ import SignIn from "./pages/SignIn"
 import SignOut from "./pages/SignUp"
 import Profile from "./pages/Profile"
 import { About } from "./pages/About"
+import Header from "./components/Header"
 
 
 
@@ -11,6 +12,7 @@ import { About } from "./pages/About"
 export default function App() {
   return (
     <BrowserRouter>
+    <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="sign-in" element={<SignIn />} />
