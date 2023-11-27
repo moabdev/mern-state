@@ -24,6 +24,7 @@ const userSchema = new mongoose.Schema({
 // We can use this two extra informmation to be able to easily sort them by time and latest.
 
 // So after we have created our schema we can create a model for our database.
+//The name of the model should be singular. The database will put it in the plural form.
 
 const User = mongoose.model('User', userSchema);
 
