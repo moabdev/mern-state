@@ -1,5 +1,5 @@
 import express from "express";
-import { test } from "../controllers/user.controller";
+import { test } from "../controllers/user.controller.js";
 
 // we're going to use express to create our routes.
 

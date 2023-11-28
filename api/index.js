@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRouter from './routes/user.route.js'
+import authRouter from  './routes/auth.route.js';
 dotenv.config();
 
 mongoose
@@ -14,6 +15,10 @@ mongoose
 
 
 const app = express();
+
+//this is to allow JSON data to be sent to the server.
+app.use(express.json());
+
 
 app.listen(3000, () => {
     console.log('Server app is running on port 3000!')
@@ -41,9 +46,11 @@ app.get('/', (req, res) => {
 // All the routes should be defined inside of index.js file.
 
 app.use('/api/users', userRouter)
+app.use('/api/auth', authRouter)
 
-
-
+//Now we don't have any form, so what we need to do is use an api test software like insomnia, postman and so on. 
+//insomnia is a api test software that is used to test the server.
+// By default we're not allowed to send any json to the server. 
 
 
 
