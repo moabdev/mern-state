@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 export default function Header() {
   return (
     <header className="bg-slate-200 shadow-md">
-        <div className="flex justify-between align-items max-w-6xl m-auto p-3">
+        <div className="flex justify-between items-center max-w-6xl m-auto p-3">
             <Link to=''>
                 <h1 className="text-2xl font-bold text-gray-900">
                     <span className="text-indigo-600">MERN</span>
-                    <span className="text-indigo-600">State</span>
+                    <span className="text-indigo-600">Estate</span>
                 </h1>
             </Link>
             <form className="bg-slate-100 p-3 rounded-lg flex items-center">
@@ -29,7 +29,7 @@ export default function Header() {
                 </Link>
                 
                 <Link to='/sign-in'>
-                <li className='text-slate-700 hover:underline'>Sign in</li>
+                    <li className='text-slate-700 hover:underline'>Sign in</li>
                 </Link>
                 
             </ul>
