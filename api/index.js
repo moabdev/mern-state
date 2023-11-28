@@ -52,7 +52,20 @@ app.use('/api/auth', authRouter)
 //insomnia is a api test software that is used to test the server.
 // By default we're not allowed to send any json to the server. 
 
-
-
+// creating the middleware for handling possible erros.
+app.use((err, req, res, next) => {
+    const statusCode = err.statusCode || 500;
+    const message = err.message || 'Internal Server Error';
+    return res.statusCode(statusCode).json({
+        success: false,
+        statusCode,
+        message
+    })
+})
+//This error handler is used to handle any errors that occur.
+//This error is coming from the input of this middleware.
+//request is the data from the browser.
+//Response is our response  from the server to the client side.
+// next -> We use the next function to move on to the next middleware.
 
 

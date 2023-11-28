@@ -9,7 +9,7 @@ import  bcryptjs from 'bcryptjs';
 
 
 //The reason why we save this  is because we need to hash the password before saving it to the database.
-export const signup = async (req, res) => {
+export const signup = async (req, res, next) => {
     const { username, email, password } = req.body;
     const hashedPassword = bcryptjs.hashSync(password, 10)
     const newUser = new User({
@@ -23,7 +23,7 @@ export const signup = async (req, res) => {
             message: "User created successfully"
         });
     } catch (error) {
-        res.status(500).json(error.message)
+        next(error)
     }
     // THis save function takes time depending of our internet connection,  so in order to prevent this error we use "await", so this code stay in this line until this operation finish.
     //when we use await we have to change the funtion to an async function.
